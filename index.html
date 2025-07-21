@@ -2,143 +2,117 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>naming.zone ─ 도메인 검색 · 중개거래 · 브랜드 네이밍</title>
+  <title>naming.zone — Web3 스타일 리디자인</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="신규 도메인 검색, 거래, 브랜드 네이밍, 뉴스까지 한 번에! naming.zone">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', Arial, sans-serif; background: #f6f8fa; margin: 0; color: #222; }
-    .container { max-width: 780px; margin: 38px auto; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); padding: 38px 32px 28px 32px; }
-    .logo { font-size: 2.2rem; font-weight: 700; color: #2262c6; letter-spacing: -2px; }
-    .desc { color: #444; font-size: 1.12rem; margin-bottom: 24px; }
-    .menu { display: flex; gap: 12px; margin-bottom: 30px; flex-wrap: wrap; }
-    .menu a { flex: 1 1 160px; text-align: center; padding: 13px; background: #2262c6; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600; transition: background 0.2s; box-shadow: 0 2px 8px rgba(34,98,198,0.08); font-size: 1.07rem; }
-    .menu a:hover { background: #174aa9; }
-    .section { margin-bottom: 36px; }
-    .section-title { font-size: 1.22rem; font-weight: 700; color: #2262c6; margin-bottom: 12px; }
-    .search-box { background: #f3f7fd; border-radius: 10px; padding: 22px 18px; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(34,98,198,0.07); }
-    .search-form { display: flex; gap: 8px; }
-    .search-form input { flex: 1; padding: 14px; font-size: 1.08rem; border: 1px solid #bbb; border-radius: 7px; }
-    .search-form button { background: #2262c6; color: #fff; border: none; border-radius: 7px; padding: 0 18px; font-size: 1.08rem; font-weight: 600; cursor: pointer; }
-    .search-form button:hover { background: #174aa9; }
-    .card { background: #f3f7fd; border-radius: 10px; padding: 18px 16px; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(34,98,198,0.07); }
-    table { width: 100%; border-collapse: collapse; }
-    th, td { padding: 8px 2px; text-align: left; font-size: 0.99rem; border-bottom: 1px solid #eaeaea; }
-    th { color: #2262c6; font-weight: 600; background: #f7f9fa; }
-    .news-list { margin: 0; padding: 0; list-style: none; }
-    .news-list li { margin-bottom: 10px; }
-    .news-list a { color: #2262c6; text-decoration: underline; }
-    .footer { text-align: center; color: #888; font-size: 0.97rem; margin-top: 34px; padding-bottom: 4px; }
-    @media (max-width: 820px) { .container { padding: 12px 4px 16px 4px; } .menu a { padding: 10px; font-size: 1rem; } .logo { font-size: 1.35rem; } }
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #f4f4f4;
+    }
+    .hero {
+      text-align: center;
+      padding: 100px 20px 60px;
+      background: radial-gradient(circle at top, #1a2a3a, transparent);
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #38f9d7, #43e97b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #c0cfdc;
+    }
+    .cta {
+      margin-top: 28px;
+    }
+    .cta a {
+      padding: 14px 28px;
+      background: #38f9d7;
+      color: #000;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      transition: all 0.2s;
+    }
+    .cta a:hover {
+      background: #43e97b;
+      color: #000;
+    }
+    .section {
+      max-width: 860px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    .section h2 {
+      font-size: 1.6rem;
+      border-left: 5px solid #38f9d7;
+      padding-left: 12px;
+      margin-bottom: 24px;
+    }
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      backdrop-filter: blur(6px);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #ffffff;
+    }
+    .footer {
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+      padding: 60px 0 20px;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="logo">naming.zone</div>
-    <div class="desc">
-      신규 도메인 검색, 거래, 브랜드 네이밍, 뉴스까지 한 번에!<br>
-      <span style="color:#e62d2d;font-weight:600;">운영 수수료 5%</span> <span style="color:#888;">(결제대행 수수료 별도)</span>
+  <section class="hero">
+    <h1>naming.zone</h1>
+    <p>당신의 브랜드에 어울리는 이름을 Web3 스타일로!</p>
+    <div class="cta">
+      <a href="#search">지금 시작하기</a>
     </div>
+  </section>
 
-    <div class="menu">
-      <a href="#search">신규 도메인 검색</a>
-      <a href="#market">중개거래</a>
-      <a href="#news">도메인 뉴스</a>
-      <a href="#naming">브랜드 네이밍 서비스</a>
+  <section class="section" id="search">
+    <h2>호텔:  도메인 검색</h2>
+    <div class="card">
+      <h3>example.zone</h3>
+      <p>사용 가능 ✔   |   등록 가능 가격: $12.99/yr</p>
     </div>
+    <div class="card">
+      <h3>mybrand.zone</h3>
+      <p>이미 등록됨 ❌</p>
+    </div>
+  </section>
 
-    <div class="section search-box" id="search">
-      <div class="section-title">신규 도메인 검색</div>
-      <form class="search-form" onsubmit="event.preventDefault(); searchDomain();">
-        <input type="text" id="domainSearchInput" placeholder="검색할 도메인명을 입력하세요 (예: example)">
-        <button type="submit">검색</button>
-      </form>
-      <div id="searchResult" style="margin-top:18px;font-size:1.07rem;color:#174aa9;"></div>
+  <section class="section">
+    <h2>호텔:  통합 검색 + 등록</h2>
+    <div class="card">
+      <h3>@seller ➜ @buyer</h3>
+      <p><strong>도메인:</strong> futureweb.zone | <strong>금액:</strong> $980 | 완료</p>
     </div>
+    <div class="card">
+      <h3>@userA ➜ @userB</h3>
+      <p><strong>도메인:</strong> webhero.zone | <strong>금액:</strong> $320 | 보류</p>
+    </div>
+  </section>
 
-    <div class="section card" id="market">
-      <div class="section-title">중개거래 플랫폼</div>
-      <table>
-        <thead>
-          <tr>
-            <th>거래일</th>
-            <th>도메인</th>
-            <th>판매자</th>
-            <th>구매자</th>
-            <th>금액</th>
-            <th>상태</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>2025-07-21</td><td>example.com</td><td>@seller</td><td>@buyer</td><td>$1000</td><td>완료</td></tr>
-          <tr><td>2025-07-20</td><td>mydomain.net</td><td>@userA</td><td>@userB</td><td>$500</td><td>완료</td></tr>
-        </tbody>
-      </table>
-      <div style="text-align:right;"><a href="deals/deals.json" style="color:#2262c6;text-decoration:underline;">전체 거래내역 보기</a></div>
-      <div style="margin-top:20px;font-size:0.97rem;">
-        <a href="https://github.com/ZoMyoungRae/domain-marketplace/issues/new?template=domain-register.md" target="_blank">도메인 등록하기</a> | 
-        <a href="https://github.com/ZoMyoungRae/domain-marketplace/issues" target="_blank">거래/문의 바로가기</a>
-      </div>
-    </div>
-
-    <div class="section card" id="news">
-      <div class="section-title">도메인 관련 뉴스</div>
-      <ul class="news-list">
-        <li><a href="https://domainnews.com/latest-trends" target="_blank">[트렌드] 2025년 신규 도메인 이슈 총정리</a></li>
-        <li><a href="https://domainnews.com/ai-domains" target="_blank">AI와 함께 뜨는 도메인 확장자</a></li>
-        <li><a href="https://domainnews.com/market-report" target="_blank">글로벌 도메인 거래 현황 리포트</a></li>
-      </ul>
-      <div style="text-align:right;"><a href="https://domainnews.com/" style="color:#2262c6;text-decoration:underline;" target="_blank">더 많은 뉴스 보기</a></div>
-    </div>
-
-    <div class="section card" id="naming">
-      <div class="section-title">브랜드 네이밍 서비스</div>
-      <div class="desc">
-        브랜드/제품/프로젝트에 어울리는 이름을 무료로 추천받으세요!
-      </div>
-      <form class="search-form" onsubmit="event.preventDefault(); suggestName();">
-        <input type="text" id="brandKeyword" placeholder="키워드 또는 사업분야 입력">
-        <button type="submit">네임 추천받기</button>
-      </form>
-      <div id="nameResult" style="margin-top:18px;font-size:1.07rem;color:#174aa9;"></div>
-    </div>
-
-    <div class="footer">
-      Powered by Hidiworks & naming.zone
-    </div>
+  <div class="footer">
+    &copy; 2025 naming.zone • Designed by Hidi
   </div>
-  <script>
-    // 신규 도메인 검색 API 연동 예시 (실제 API 주소/구조로 수정 필요)
-    async function searchDomain() {
-      const query = document.getElementById('domainSearchInput').value.trim();
-      const resultElem = document.getElementById('searchResult');
-      if (!query) {
-        resultElem.textContent = '도메인명을 입력하세요!';
-        return;
-      }
-      resultElem.textContent = '검색 중...';
-      // 실제 API 연동 예시 (아래 코드 주석 해제/수정 필요)
-      // let response = await fetch(`https://api.naming.zone/search?name=${encodeURIComponent(query)}`);
-      // let data = await response.json();
-      // 아래는 임시 예시 결과
-      setTimeout(() => {
-        resultElem.innerHTML = `<strong>${query}.zone</strong> <span style="color:green;">사용 가능!</span>`;
-      }, 700);
-    }
-
-    // 브랜드 네이밍 추천 예시 (실제 AI 연동/컨설팅으로 교체 가능)
-    function suggestName() {
-      const keyword = document.getElementById('brandKeyword').value.trim();
-      const resultElem = document.getElementById('nameResult');
-      if (!keyword) {
-        resultElem.textContent = '키워드나 사업분야를 입력하세요!';
-        return;
-      }
-      resultElem.textContent = '네임 추천 중...';
-      setTimeout(() => {
-        resultElem.innerHTML = `<strong>추천 브랜드명:</strong> ${keyword}Zone, ${keyword}Hub, ${keyword}ly, ${keyword}Works`;
-      }, 800);
-    }
-  </script>
 </body>
 </html>

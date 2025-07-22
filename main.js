@@ -1,6 +1,9 @@
 async function searchDomain() {
-  const domain = document.getElementById("domainSearchInput").value.trim();
+  const input = document.getElementById("domainSearchInput");
+  const domain = input.value.trim();
   const resultElem = document.getElementById("searchResult");
+
+  console.log("📦 전송할 도메인:", domain);
 
   if (!domain) {
     resultElem.textContent = "도메인을 입력해주세요!";
@@ -10,16 +13,16 @@ async function searchDomain() {
   resultElem.textContent = "검색 중...";
 
   try {
-    console.log("입력값:", domain); // 디버깅용 출력
-
     const res = await fetch("https://aiarena.zone/namingzone/check.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ domain })
+      body: JSON.stringify({ domain: domain }) // 명시적으로 넣기!
     });
 
-    const data = await res.json();
-    console.log("응답 데이터:", data); // 디버깅용 출력
+    const text = await res.text();
+    console.log("📨 응답 내용:", text);
+
+    const data = JSON.parse(text);
 
     if (data.status === "SUCCESS" && data.available) {
       resultElem.innerHTML = `<strong>${domain}</strong> <span style="color:green;">사용 가능! ✅</span>`;

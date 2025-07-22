@@ -10,6 +10,8 @@ async function searchDomain() {
   resultElem.textContent = "검색 중...";
 
   try {
+    console.log("입력값:", domain); // 디버깅용 출력
+
     const res = await fetch("https://aiarena.zone/namingzone/check.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -17,6 +19,7 @@ async function searchDomain() {
     });
 
     const data = await res.json();
+    console.log("응답 데이터:", data); // 디버깅용 출력
 
     if (data.status === "SUCCESS" && data.available) {
       resultElem.innerHTML = `<strong>${domain}</strong> <span style="color:green;">사용 가능! ✅</span>`;

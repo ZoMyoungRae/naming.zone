@@ -2,117 +2,24 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>naming.zone — Web3 스타일 리디자인</title>
+  <title>naming.zone - 도메인 검색</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Outfit', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #f4f4f4;
-    }
-    .hero {
-      text-align: center;
-      padding: 100px 20px 60px;
-      background: radial-gradient(circle at top, #1a2a3a, transparent);
-    }
-    .hero h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      background: linear-gradient(to right, #38f9d7, #43e97b);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 12px;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      color: #c0cfdc;
-    }
-    .cta {
-      margin-top: 28px;
-    }
-    .cta a {
-      padding: 14px 28px;
-      background: #38f9d7;
-      color: #000;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.05rem;
-      transition: all 0.2s;
-    }
-    .cta a:hover {
-      background: #43e97b;
-      color: #000;
-    }
-    .section {
-      max-width: 860px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-    .section h2 {
-      font-size: 1.6rem;
-      border-left: 5px solid #38f9d7;
-      padding-left: 12px;
-      margin-bottom: 24px;
-    }
-    .card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 14px;
-      padding: 20px;
-      margin-bottom: 18px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-      backdrop-filter: blur(6px);
-    }
-    .card h3 {
-      margin-top: 0;
-      color: #ffffff;
-    }
-    .footer {
-      text-align: center;
-      color: #888;
-      font-size: 0.9rem;
-      padding: 60px 0 20px;
-    }
+    body { font-family: sans-serif; background: #f6f8fa; padding: 40px; text-align: center; }
+    h1 { color: #2262c6; }
+    input { padding: 12px; font-size: 1rem; width: 280px; border-radius: 6px; border: 1px solid #ccc; }
+    button { padding: 12px 20px; font-size: 1rem; background: #2262c6; color: white; border: none; border-radius: 6px; cursor: pointer; margin-left: 8px; }
+    #searchResult { margin-top: 24px; font-size: 1.2rem; }
   </style>
 </head>
 <body>
-  <section class="hero">
-    <img src="assets/logo_n_02.png" width="330px" height="45px"><!--h1>naming.zone</h1-->
-    <p>당신의 브랜드에 어울리는 이름을 Web3 스타일로!</p>
-    <div class="cta">
-      <a href="#search">지금 시작하기</a>
-    </div>
-  </section>
+  <h1>naming.zone</h1>
+  <p>도메인 사용 가능 여부를 확인하세요</p>
+  <input type="text" id="domainSearchInput" placeholder="예: mycoolbrand.com">
+  <button onclick="searchDomain()">검색</button>
 
-  <section class="section" id="search">
-    <h2>호텔:  도메인 검색</h2>
-    <div class="card">
-      <h3>example.zone</h3>
-      <p>사용 가능 ✔   |   등록 가능 가격: $12.99/yr</p>
-    </div>
-    <div class="card">
-      <h3>mybrand.zone</h3>
-      <p>이미 등록됨 ❌</p>
-    </div>
-  </section>
+  <div id="searchResult"></div>
 
-  <section class="section">
-    <h2>호텔:  통합 검색 + 등록</h2>
-    <div class="card">
-      <h3>@seller ➜ @buyer</h3>
-      <p><strong>도메인:</strong> futureweb.zone | <strong>금액:</strong> $980 | 완료</p>
-    </div>
-    <div class="card">
-      <h3>@userA ➜ @userB</h3>
-      <p><strong>도메인:</strong> webhero.zone | <strong>금액:</strong> $320 | 보류</p>
-    </div>
-  </section>
-
-  <div class="footer">
-    &copy; 2025 naming.zone • Designed by Hidi
-  </div>
+  <script src="main.js"></script>
 </body>
 </html>
